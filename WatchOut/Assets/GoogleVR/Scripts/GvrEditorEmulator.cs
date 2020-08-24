@@ -40,6 +40,7 @@ public class GvrEditorEmulator : MonoBehaviour
 
     // Simulated neck model.  Vector from the neck pivot point to the point between the eyes.
     private static readonly Vector3 NECK_OFFSET = new Vector3(0, 0.075f, 0.08f);
+    //private static readonly Vector3 NECK_OFFSET = new Vector3(1, 1f, 1f);
 
     private static GvrEditorEmulator instance;
     private static bool instanceSearchedFor = false;

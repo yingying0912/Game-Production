@@ -188,6 +188,9 @@
     <Compile Include="Assets\GoogleVR\Scripts\Utilities\Internal\SuppressMemoryAllocationErrorAttribute.cs" />
     <Compile Include="Assets\GoogleVR\Scripts\Video\GvrVideoPlayerTexture.cs" />
     <Compile Include="Assets\Scripts\ButtonBehaviour.cs" />
+    <Compile Include="Assets\Scripts\GyroRotate.cs" />
+    <Compile Include="Assets\Scripts\PunchMovement.cs" />
+    <Compile Include="Assets\Scripts\RandomSpawn.cs" />
     <Compile Include="Assets\Scripts\SceneController.cs" />
     <None Include="Assets\GoogleVR\Shaders\GvrUIOverlayFont.shader" />
     <None Include="Assets\GoogleVR\Shaders\GvrReticleShader.shader" />
