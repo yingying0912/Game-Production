@@ -4,19 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public GameManager gameManager;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //Debug.Log(transform.rotation);
-    }
     void OnTriggerEnter(Collider collision)
     {
         if (collision.tag == "Top")
@@ -24,44 +12,44 @@ public class Player : MonoBehaviour
             
             if (transform.rotation.x > 0.5)
             {
-                gameManager.addPoint();
+                FindObjectOfType<GameManager>().addPoint();
             }
             else
             {
-                gameManager.minusHP();
+                FindObjectOfType<GameManager>().minusHP();
             }
         }
         if (collision.tag == "Right")
         {
             if (transform.rotation.y < -0.5)
             {
-                gameManager.addPoint();
+                FindObjectOfType<GameManager>().addPoint();
             }
             else
             {
-                gameManager.minusHP();
+                FindObjectOfType<GameManager>().minusHP();
             }
         }
         if (collision.tag == "Left")
         {
             if (transform.rotation.y > 0.5)
             {
-                gameManager.addPoint();
+                FindObjectOfType<GameManager>().addPoint();
             }
             else
             {
-                gameManager.minusHP();
+                FindObjectOfType<GameManager>().minusHP();
             }
         }
         if (collision.tag == "Bottom")
         {
             if (transform.rotation.x < -0.5)
             {
-                gameManager.addPoint();
+                FindObjectOfType<GameManager>().addPoint();
             }
             else
             {
-                gameManager.minusHP();
+                FindObjectOfType<GameManager>().minusHP();
             }
         }
     }
