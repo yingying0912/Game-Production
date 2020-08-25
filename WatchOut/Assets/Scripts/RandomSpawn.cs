@@ -9,7 +9,6 @@ public class RandomSpawn : MonoBehaviour
     public GameObject[] objects;
     private int randomSpawn = 0;
     public int attackNum;
-    public int currentNum = 0;
     public bool gameLose = false;
     public bool spawnEnd = false;
     

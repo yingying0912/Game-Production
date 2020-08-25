@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public int hp = 10;
     private int currentHP;
     public GameObject loseGameUI;
+    public GameObject winGameUI;
     public RandomSpawn Spawning;
 
     // Start is called before the first frame update
@@ -31,7 +32,10 @@ public class GameManager : MonoBehaviour
             loseGameUI.SetActive(true);
         }
 
-        
+        if (Spawning.spawnEnd == true && point >= pointRequired)
+        {
+            winGameUI.SetActive(true);
+        }
     }
 
     public void addPoint()

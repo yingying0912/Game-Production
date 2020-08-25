@@ -121,6 +121,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &90080378 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7803999329143995407, guid: 41feb5a6d87c8ec4abd05139ef6e072e,
+    type: 3}
+  m_PrefabInstance: {fileID: 7803999328151083271}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &323717505
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -784,7 +790,7 @@ PrefabInstance:
     - target: {fileID: 5150441932137177497, guid: f2d0c3197de1c5345bd8a0359dd934eb,
         type: 3}
       propertyPath: pointRequired
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5150441932137177497, guid: f2d0c3197de1c5345bd8a0359dd934eb,
         type: 3}
@@ -801,6 +807,11 @@ PrefabInstance:
       propertyPath: hp
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5150441932137177497, guid: f2d0c3197de1c5345bd8a0359dd934eb,
+        type: 3}
+      propertyPath: winGameUI
+      value: 
+      objectReference: {fileID: 90080378}
     - target: {fileID: 5150441932137177498, guid: f2d0c3197de1c5345bd8a0359dd934eb,
         type: 3}
       propertyPath: m_LocalPosition.x
