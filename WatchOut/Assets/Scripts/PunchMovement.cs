@@ -11,7 +11,7 @@ public class PunchMovement : MonoBehaviour
 
     // Update is called once per frame
     void Start()
-    {
+    {        
         velocity = camera.transform.position - transform.position;
         velocity.Normalize();
         velocity *= 5;
@@ -25,5 +25,7 @@ public class PunchMovement : MonoBehaviour
             Destroy(gameObject);
         }
     }
-   
+
+    
+
 }
