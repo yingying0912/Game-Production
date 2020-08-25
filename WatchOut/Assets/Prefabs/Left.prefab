@@ -110,6 +110,7 @@ MonoBehaviour:
   rg: {fileID: 522853188767107089}
   camera: {fileID: 2978042541601059575, guid: d810d56d75aa5c34d9ade145338fde90, type: 3}
   velocity: {x: 0, y: 0, z: 0}
+  speed: 5
 --- !u!54 &522853188767107089
 Rigidbody:
   m_ObjectHideFlags: 0

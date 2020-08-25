@@ -8,7 +8,7 @@ public class PunchMovement : MonoBehaviour
     public Rigidbody rg;
     public GameObject camera;
     public Vector3 velocity;
-    public int speed = 1;
+    public int speed;
 
     // Update is called once per frame
     void Start()

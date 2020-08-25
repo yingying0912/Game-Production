@@ -17,16 +17,6 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
-    public void Exit()
-    {
-        Application.Quit();
-    }
-
-    public void LoadGameLevel(int level)
-    {
-        SceneManager.LoadScene(level + 2);
-    }
-
     public void ReloadCurrentScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -36,4 +26,30 @@ public class SceneController : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    public void LoadGameLevel(int level)
+    {
+        SceneManager.LoadScene(level + 3);
+    }
+
+    public void LoadTutorial()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void LoadLevelModeMenu()
+    {
+        SceneManager.LoadScene(2);
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
+    }
+
+    
+
+    
+
+    
 }

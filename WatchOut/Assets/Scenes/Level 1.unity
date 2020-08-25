@@ -790,7 +790,7 @@ PrefabInstance:
     - target: {fileID: 5150441932137177497, guid: f2d0c3197de1c5345bd8a0359dd934eb,
         type: 3}
       propertyPath: pointRequired
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5150441932137177497, guid: f2d0c3197de1c5345bd8a0359dd934eb,
         type: 3}
@@ -805,7 +805,7 @@ PrefabInstance:
     - target: {fileID: 5150441932137177497, guid: f2d0c3197de1c5345bd8a0359dd934eb,
         type: 3}
       propertyPath: hp
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5150441932137177497, guid: f2d0c3197de1c5345bd8a0359dd934eb,
         type: 3}
@@ -870,7 +870,7 @@ PrefabInstance:
     - target: {fileID: 5150441932137177499, guid: f2d0c3197de1c5345bd8a0359dd934eb,
         type: 3}
       propertyPath: attackNum
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5150441932137177499, guid: f2d0c3197de1c5345bd8a0359dd934eb,
         type: 3}
