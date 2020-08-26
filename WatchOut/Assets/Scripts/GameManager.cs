@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class GameManager : MonoBehaviour
     public GameObject loseGameUI;
     public GameObject winGameUI;
     public RandomSpawn Spawning;
+    public Text hpText;
+    public Text pointText;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +24,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        TextUpdate();
         if (currentHP == 0)
         {
             loseGameUI.SetActive(true);
@@ -48,5 +52,11 @@ public class GameManager : MonoBehaviour
     {
         currentHP -= 1;
         Debug.Log("Minus 1 HP, Total HP = " + hp);
+    }
+
+    public void TextUpdate()
+    {
+        hpText.text = "HP: " + currentHP + " / " + hp;
+        pointText.text = "Point: " + point + " / " + pointRequired;
     }
 }
