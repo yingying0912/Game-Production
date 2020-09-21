@@ -17,7 +17,7 @@ public class Tutorial : MonoBehaviour
     {
         StartCoroutine(tutStart());
         animation = enemyModel.GetComponent<Animator>();
-        animation.speed = desiredSpeed;
+        animation.speed *= desiredSpeed;
     }
 
     IEnumerator tutStart()
@@ -26,6 +26,7 @@ public class Tutorial : MonoBehaviour
         {
             while (!evade)
             {
+                i = 2;
                 Instantiate(objects[i], objects[i].transform.position, objects[i].transform.rotation);
                 arrows[i].SetActive(true);
                 switch (i)
@@ -37,15 +38,13 @@ public class Tutorial : MonoBehaviour
                         animation.SetTrigger("bot");
                         break;
                     case 2:
-                        animation.SetTrigger("right");
+                        animation.SetTrigger("left");
                         break;
                     case 3:
-                        animation.SetTrigger("left");
+                        animation.SetTrigger("right");
                         break;
                 }
                 yield return new WaitForSeconds(5f);
-                if (i == 2)
-                    yield return new WaitForSeconds(4f);
             }
             arrows[i].SetActive(false);
             evade = false;

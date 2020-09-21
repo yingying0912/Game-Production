@@ -5,58 +5,87 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public int pointRequired;
-    private int point = 0;
-    public int hp = 10;
+    public int maxHP = 10;
     private int currentHP;
+    public HealthBar healthBar;
+
+    public int attackLeft;
+    public Text t_attackLeft;
+
+    public int combo = 0;
+    public string powerUp;
+    public StrengthBar strengthBar;
+    public ImmuneBar immuneBar;
+
     public GameObject loseGameUI;
     public GameObject winGameUI;
     public RandomSpawn Spawning;
-    public Text hpText;
-    public Text pointText;
-
+    
     // Start is called before the first frame update
     void Start()
     {
-        currentHP = hp;
+        currentHP = maxHP;
+        healthBar.SetMaxHealth(maxHP);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //TextUpdate();
+        AttackUpdate();
+        CheckCombo();
         if (currentHP == 0)
         {
             loseGameUI.SetActive(true);
             Spawning.gameLose = true;
         }
 
-        if (Spawning.spawnEnd == true && point < pointRequired)
-        {
-            loseGameUI.SetActive(true);
-        }
-
-        if (Spawning.spawnEnd == true && point >= pointRequired)
+        if (Spawning.spawnEnd)
         {
             winGameUI.SetActive(true);
         }
     }
 
-    public void addPoint()
-    {
-        point += 1;
-        Debug.Log("Add 1 point, Total points = " + point);
-    }
-
     public void minusHP()
     {
-        currentHP -= 1;
-        Debug.Log("Minus 1 HP, Total HP = " + hp);
+        if (powerUp == "stronger")
+            currentHP--;
+        else if (powerUp == "")
+            currentHP -= 2;
+        healthBar.SetHealth(currentHP);
     }
 
-    public void TextUpdate()
+    public void AttackUpdate()
     {
-        hpText.text = "HP: " + currentHP + " / " + hp;
-        pointText.text = "Point: " + point + " / " + pointRequired;
+        attackLeft = Spawning.attackLeft;
+        t_attackLeft.text = attackLeft.ToString();
+    }
+
+    public void SetCombo(int num)
+    {
+        if (num == 1)
+            combo++;
+        else
+        {
+            combo = 0;
+            powerUp = "";
+        }
+    }
+
+    public void CheckCombo()
+    {
+        if (combo >= 10)
+            powerUp = "immune";
+        else if (combo >= 5)
+            powerUp = "stronger";
+
+        if (combo == 0)
+        {
+            strengthBar.SetStrength(combo);
+            immuneBar.SetImmune(combo - 5);
+        }
+        else if (combo <= 5)
+            strengthBar.SetStrength(combo);
+        else if (combo <= 10)
+            immuneBar.SetImmune(combo - 5);
     }
 }
