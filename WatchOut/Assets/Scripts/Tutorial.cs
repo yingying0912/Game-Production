@@ -22,7 +22,7 @@ public class Tutorial : MonoBehaviour
 
     IEnumerator tutStart()
     {
-        for(int i = 5; i < 4; i++)
+        for(int i = 0; i < 4; i++)
         {
             while (!evade)
             {

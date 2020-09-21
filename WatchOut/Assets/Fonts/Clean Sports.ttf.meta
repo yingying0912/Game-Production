@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: eac782bfc013cfe4f83deff2a710db63
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Clean Sports
+  fontNames:
+  - Clean Sports
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 7773e64e2638b354497478194223d47a, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

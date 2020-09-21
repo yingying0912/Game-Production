@@ -33,7 +33,7 @@ public class TutorialCollision : MonoBehaviour
         }
         if (collision.tag == "Left")
         {
-            if (transform.rotation.y > 0.5)
+            if (transform.rotation.y > 0.45)
             {
                 player.evade = true;
             }
@@ -44,7 +44,7 @@ public class TutorialCollision : MonoBehaviour
         }
         if (collision.tag == "Bottom")
         {
-            if (transform.rotation.x < -0.5)
+            if (transform.rotation.x < -0.45)
             {
                 player.evade = true;
             }

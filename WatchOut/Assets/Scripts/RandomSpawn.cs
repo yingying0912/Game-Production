@@ -11,12 +11,12 @@ public class RandomSpawn : MonoBehaviour
     public int attackNum;
     public bool gameLose = false;
     public bool spawnEnd = false;
-    public Animator animation;
+    //public Animator animation;
     
     void Start()
     {
         StartCoroutine(Spawn());
-        animation = gameObject.GetComponent<Animator>();
+        //animation = gameObject.GetComponent<Animator>();
     }
 
     private void Update()
@@ -33,12 +33,6 @@ public class RandomSpawn : MonoBehaviour
         {
             randomSpawn = Random.Range(0, 4);
             Instantiate(objects[randomSpawn], objects[randomSpawn].transform.position, objects[randomSpawn].transform.rotation);
-            if (randomSpawn == 0 && !animation.GetBool("top"))
-            {
-                animation.SetBool("top", true);
-            }
-            else
-                animation.SetBool("top", false);
             yield return new WaitForSeconds(5f);
         }
         spawnEnd = true;

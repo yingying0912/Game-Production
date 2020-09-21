@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TextUpdate();
+        //TextUpdate();
         if (currentHP == 0)
         {
             loseGameUI.SetActive(true);
