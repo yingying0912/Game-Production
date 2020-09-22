@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public Text t_attackLeft;
 
     public int combo = 0;
+    public Transform pfComboPopup;
+
     public string powerUp;
     public StrengthBar strengthBar;
     public ImmuneBar immuneBar;
@@ -33,7 +35,7 @@ public class GameManager : MonoBehaviour
     {
         AttackUpdate();
         CheckCombo();
-        if (currentHP == 0)
+        if (currentHP < 0)
         {
             loseGameUI.SetActive(true);
             Spawning.gameLose = true;
@@ -69,6 +71,10 @@ public class GameManager : MonoBehaviour
             combo = 0;
             powerUp = "";
         }
+        if (combo > 5) 
+            ComboPopup.Create(pfComboPopup, new Vector3(28, 118, 46), combo);
+        else if (combo >= 3)
+            ComboPopup.Create(pfComboPopup, new Vector3(-28, 118, 46), combo);
     }
 
     public void CheckCombo()
@@ -88,4 +94,13 @@ public class GameManager : MonoBehaviour
         else if (combo <= 10)
             immuneBar.SetImmune(combo - 5);
     }
+
+    /*
+    public void GenerateComboPopup()
+    {
+        Transform comboPopupTransform = Instantiate(pfComboPopup, new Vector3(28, 118, 46), Quaternion.identity);
+        ComboPopup comboPopup = comboPopupTransform.GetComponent<ComboPopup>();
+        comboPopup.Setup(combo);
+    }
+    */
 }
