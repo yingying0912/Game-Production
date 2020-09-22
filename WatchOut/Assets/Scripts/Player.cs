@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     {
         if (collision.tag == "Top")
         {
-            if (transform.rotation.x > 0.5)
+            if (transform.rotation.x > 0.45)
                 FindObjectOfType<GameManager>().SetCombo(1);
             else
             {
@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
         }
         if (collision.tag == "Bottom")
         {
-            if (transform.rotation.x < -0.5)
+            if (transform.rotation.x < -0.45)
                 FindObjectOfType<GameManager>().SetCombo(1);
             else
             {

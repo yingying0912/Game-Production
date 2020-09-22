@@ -33,6 +33,12 @@ public class RandomSpawn : MonoBehaviour
             StopAllCoroutines();
             endAnimation = true;
         }
+
+        if (endAnimation == false && spawnEnd == true)
+        {
+            animation.SetTrigger("win");
+            endAnimation = true;
+        }
             
     }
     IEnumerator Spawn()

@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     {
         AttackUpdate();
         CheckCombo();
-        if (currentHP < 0)
+        if (currentHP <= 0)
         {
             loseGameUI.SetActive(true);
             Spawning.gameLose = true;
@@ -72,17 +72,21 @@ public class GameManager : MonoBehaviour
             powerUp = "";
         }
         if (combo > 5) 
-            ComboPopup.Create(pfComboPopup, new Vector3(28, 118, 46), combo);
+            ComboPopup.Create(pfComboPopup, new Vector3(15, 118, 20), combo);
         else if (combo >= 3)
-            ComboPopup.Create(pfComboPopup, new Vector3(-28, 118, 46), combo);
+            ComboPopup.Create(pfComboPopup, new Vector3(15, 118, 20), combo);
     }
 
     public void CheckCombo()
     {
-        if (combo >= 10)
+        if (combo == 10)
+        {
             powerUp = "immune";
-        else if (combo >= 5)
+        }            
+        else if (combo == 5)
+        {
             powerUp = "stronger";
+        }
 
         if (combo == 0)
         {
@@ -96,11 +100,20 @@ public class GameManager : MonoBehaviour
     }
 
     /*
-    public void GenerateComboPopup()
+    public void TriggerPowerUpEffect(string powerUp)
     {
-        Transform comboPopupTransform = Instantiate(pfComboPopup, new Vector3(28, 118, 46), Quaternion.identity);
-        ComboPopup comboPopup = comboPopupTransform.GetComponent<ComboPopup>();
-        comboPopup.Setup(combo);
+        if (powerUp == "")
+        {
+            strengthEffect.SetActive(false);
+            immuneEffect.SetActive(false);
+        }
+        else if (powerUp == "stronger")
+            strengthEffect.SetActive(true);
+        else if (powerUp == "immune")
+        {
+            strengthEffect.SetActive(false);
+            immuneEffect.SetActive(true);
+        }        
     }
     */
 }
