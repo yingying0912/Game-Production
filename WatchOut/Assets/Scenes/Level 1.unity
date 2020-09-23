@@ -394,6 +394,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff511b8a25d8634e8de8a49b8b632b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &890471679 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6139379920032464830, guid: f048f57fe4c1622488f3d6aa5d8ce406,
+    type: 3}
+  m_PrefabInstance: {fileID: 6139379920318302698}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1013130388
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -749,6 +755,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bef436e06ea43f94daec76a93ae7be6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2090593262 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2470622877324504716, guid: 732fa1e4e388d594b864a8c346315204,
+    type: 3}
+  m_PrefabInstance: {fileID: 2470622876523583400}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2399972831287923893
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -864,7 +876,7 @@ PrefabInstance:
     - target: {fileID: 2399972832229604689, guid: 48a724cd025f5ae42998737eea172747,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 238
+      value: 330
       objectReference: {fileID: 0}
     - target: {fileID: 2399972832229604689, guid: 48a724cd025f5ae42998737eea172747,
         type: 3}
@@ -1138,6 +1150,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Effect_Immune
+      objectReference: {fileID: 0}
+    - target: {fileID: 2470622877324504716, guid: 732fa1e4e388d594b864a8c346315204,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2470622877324504717, guid: 732fa1e4e388d594b864a8c346315204,
         type: 3}
@@ -1572,12 +1589,12 @@ PrefabInstance:
         type: 3}
       propertyPath: strengthEffect
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 890471679}
     - target: {fileID: 5150441932137177497, guid: f2d0c3197de1c5345bd8a0359dd934eb,
         type: 3}
       propertyPath: immuneEffect
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2090593262}
     - target: {fileID: 5150441932137177498, guid: f2d0c3197de1c5345bd8a0359dd934eb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1688,6 +1705,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Effect_Stronger
+      objectReference: {fileID: 0}
+    - target: {fileID: 6139379920032464830, guid: f048f57fe4c1622488f3d6aa5d8ce406,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6139379920032464831, guid: f048f57fe4c1622488f3d6aa5d8ce406,
         type: 3}

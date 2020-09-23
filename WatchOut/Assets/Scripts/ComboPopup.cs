@@ -6,11 +6,15 @@ using TMPro;
 public class ComboPopup : MonoBehaviour
 {
     
-    public static ComboPopup Create(Transform pfComboPopup, Vector3 position, int comboAmount)
+    public static ComboPopup Create(Transform pfComboPopup, Vector3 position, int comboAmount, string location)
     {
-        Transform comboPopupTransform = Instantiate(pfComboPopup, position, Quaternion.identity);
+        Transform comboPopupTransform;
+        if (location == "right")
+            comboPopupTransform = Instantiate(pfComboPopup, position, Quaternion.Euler(new Vector3(0, 25, 0)));
+        else
+            comboPopupTransform = Instantiate(pfComboPopup, position, Quaternion.Euler(new Vector3(0, -25, 0)));
         ComboPopup comboPopup = comboPopupTransform.GetComponent<ComboPopup>();
-        comboPopup.Setup(comboAmount);
+        comboPopup.Setup(comboAmount, location);
 
         return comboPopup;
     }
@@ -18,13 +22,14 @@ public class ComboPopup : MonoBehaviour
     private TextMeshPro textMesh;
     private float disappearTimer;
     private Color textColor;
+    private string location;
 
     private void Awake()
     {
         textMesh = transform.GetComponent<TextMeshPro>();
     }
 
-    public void Setup (int comboAmount)
+    public void Setup (int comboAmount, string location)
     {
         if (comboAmount >= 3)
         {
@@ -35,6 +40,8 @@ public class ComboPopup : MonoBehaviour
 
             if (comboAmount > 5)
             {
+                if (comboAmount == 10)
+                    textMesh.fontSize = 55;
                 textMesh.color = new Color(0.25f, 1f, 0.99f);
                 Color colorTopRight = new Color(0.7f, 0.57f, 0.9f);
                 Color colorTopLeft = new Color(0.28f, 0.5f, 0.9f);
@@ -43,7 +50,7 @@ public class ComboPopup : MonoBehaviour
                 textMesh.outlineColor = colorOutline;
             }                
         }
-        
+        this.location = location;
         textColor = textMesh.color;
         disappearTimer = 2f;
     }
@@ -52,7 +59,10 @@ public class ComboPopup : MonoBehaviour
     {
         float moveXSpeed = 1f;
         float moveZSpeed = 2f;
-        transform.position += new Vector3(moveXSpeed, 0, moveZSpeed) * Time.deltaTime;
+        if (location == "left")
+            transform.position += new Vector3(moveXSpeed, 0, moveZSpeed) * Time.deltaTime;
+        else
+            transform.position += new Vector3(-moveXSpeed, 0, moveZSpeed) * Time.deltaTime;
 
         disappearTimer -= Time.deltaTime;
         if (disappearTimer < 0)

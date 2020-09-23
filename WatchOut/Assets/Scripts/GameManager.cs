@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     public string powerUp;
     public StrengthBar strengthBar;
     public ImmuneBar immuneBar;
+    public GameObject strengthEffect;
+    public GameObject immuneEffect;
 
     public GameObject loseGameUI;
     public GameObject winGameUI;
@@ -70,11 +72,12 @@ public class GameManager : MonoBehaviour
         {
             combo = 0;
             powerUp = "";
+            TriggerPowerUpEffect();
         }
         if (combo > 5) 
-            ComboPopup.Create(pfComboPopup, new Vector3(15, 118, 20), combo);
+            ComboPopup.Create(pfComboPopup, new Vector3(15, 118, 20), combo, "right");
         else if (combo >= 3)
-            ComboPopup.Create(pfComboPopup, new Vector3(15, 118, 20), combo);
+            ComboPopup.Create(pfComboPopup, new Vector3(-15, 118, 20), combo, "left");
     }
 
     public void CheckCombo()
@@ -82,10 +85,12 @@ public class GameManager : MonoBehaviour
         if (combo == 10)
         {
             powerUp = "immune";
+            TriggerPowerUpEffect();
         }            
         else if (combo == 5)
         {
             powerUp = "stronger";
+            TriggerPowerUpEffect();
         }
 
         if (combo == 0)
@@ -99,8 +104,7 @@ public class GameManager : MonoBehaviour
             immuneBar.SetImmune(combo - 5);
     }
 
-    /*
-    public void TriggerPowerUpEffect(string powerUp)
+    public void TriggerPowerUpEffect()
     {
         if (powerUp == "")
         {
@@ -115,5 +119,4 @@ public class GameManager : MonoBehaviour
             immuneEffect.SetActive(true);
         }        
     }
-    */
 }
