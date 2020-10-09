@@ -24,10 +24,19 @@ public class GameManager : MonoBehaviour
     public GameObject loseGameUI;
     public GameObject winGameUI;
     public RandomSpawn Spawning;
-    
+
+    public AudioClip startGame;
+    public AudioClip winGame;
+    public AudioClip loseGame;
+    public AudioClip[] hitEffect;
+    public AudioClip[] hurtEffect;
+    public AudioClip strengthCombo;
+    public AudioClip immuneCombo;
+
     // Start is called before the first frame update
     void Start()
     {
+        SoundManager.instance.PlayEffect(startGame);
         currentHP = maxHP;
         healthBar.SetMaxHealth(maxHP);
     }
@@ -45,8 +54,24 @@ public class GameManager : MonoBehaviour
 
         if (Spawning.spawnEnd)
         {
+            
             winGameUI.SetActive(true);
         }
+    }
+
+    public void playSound(bool evade)
+    {
+        if (evade)
+            Invoke("triggerWinSound", 0.5f);
+        else
+        {
+            SoundManager.instance.PlayEffect(hitEffect);
+            if (currentHP <= 0)
+                Invoke("triggerLoseSound", 0.5f);
+            else
+                Invoke("triggerHurtSound", 0.5f);
+        }
+        
     }
 
     public void minusHP()
@@ -82,12 +107,12 @@ public class GameManager : MonoBehaviour
 
     public void CheckCombo()
     {
-        if (combo == 10)
+        if (combo == 10 && powerUp != "immune")
         {
             powerUp = "immune";
             TriggerPowerUpEffect();
         }            
-        else if (combo == 5)
+        else if (combo == 5 && powerUp != "stronger")
         {
             powerUp = "stronger";
             TriggerPowerUpEffect();
@@ -112,11 +137,31 @@ public class GameManager : MonoBehaviour
             immuneEffect.SetActive(false);
         }
         else if (powerUp == "stronger")
+        {
+            SoundManager.instance.PlayMusic(strengthCombo);
             strengthEffect.SetActive(true);
+        } 
         else if (powerUp == "immune")
         {
+            SoundManager.instance.PlayMusic(immuneCombo);
+            SoundManager.instance.musicSource.loop = true;
             strengthEffect.SetActive(false);
             immuneEffect.SetActive(true);
         }        
+    }
+
+    private void triggerHurtSound()
+    {
+        SoundManager.instance.PlayEffect(hurtEffect);
+    }
+
+    private void triggerLoseSound()
+    {
+        SoundManager.instance.PlayEffect(loseGame);
+    }
+
+    private void triggerWinSound()
+    {
+        SoundManager.instance.PlayEffect(winGame);
     }
 }

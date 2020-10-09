@@ -10,8 +10,7 @@ public class TutorialCollision : MonoBehaviour
     {
         if (collision.tag == "Top")
         {
-
-            if (transform.rotation.x > 0.5)
+            if (transform.rotation.x > 0.45)
             {
                 player.evade = true;
             }
@@ -19,10 +18,11 @@ public class TutorialCollision : MonoBehaviour
             {
                 player.evade = false;
             }
+            
         }
         if (collision.tag == "Right")
         {
-            if (transform.rotation.y < -0.5)
+            if (transform.rotation.y < -0.45)
             {
                 player.evade = true;
             }

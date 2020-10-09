@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Tutorial : MonoBehaviour
 {
     public GameObject[] objects;
@@ -11,6 +10,12 @@ public class Tutorial : MonoBehaviour
     public GameObject enemyModel;
     public Animator animation;
     public float desiredSpeed;
+    
+    public AudioClip startGame;
+    public AudioClip[] swingEffect;
+    public AudioClip[] hitEffect;
+    public AudioClip[] hurtEffect;
+    public AudioClip winGame;
 
     // Start is called before the first frame update
     void Start()
@@ -22,13 +27,16 @@ public class Tutorial : MonoBehaviour
 
     IEnumerator tutStart()
     {
+        SoundManager.instance.PlayEffect(startGame);
+        yield return new WaitForSeconds(5f);
+
         for(int i = 0; i < 4; i++)
         {
             while (!evade)
             {
-                i = 2;
                 Instantiate(objects[i], objects[i].transform.position, objects[i].transform.rotation);
                 arrows[i].SetActive(true);
+                Invoke("triggerSound", 3f);
                 switch (i)
                 {
                     case 0:
@@ -45,11 +53,29 @@ public class Tutorial : MonoBehaviour
                         break;
                 }
                 yield return new WaitForSeconds(5f);
+                if (!evade)
+                {
+                    SoundManager.instance.PlayEffect(hitEffect);
+                    Invoke("triggerHurtSound", 0.5f);
+                }
             }
             arrows[i].SetActive(false);
             evade = false;
         }
+        yield return new WaitForSeconds(1f);
+        SoundManager.instance.PlayEffect(winGame);
         tutorialEnd.SetActive(true);
         animation.SetTrigger("win");
     }
+
+    private void triggerSound()
+    {
+        SoundManager.instance.PlayEffect(swingEffect);
+    }
+    private void triggerHurtSound()
+    {
+        SoundManager.instance.PlayEffect(hurtEffect);
+    }
 }
+
+

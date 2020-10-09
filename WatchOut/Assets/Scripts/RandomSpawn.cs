@@ -16,13 +16,15 @@ public class RandomSpawn : MonoBehaviour
     public GameObject enemyModel;
     public float desiredSpeed;
     private bool endAnimation = false;
-    
+
+    public AudioClip[] swingEffect;
+
     void Start()
     {
         StartCoroutine(Spawn());
         animation = enemyModel.GetComponent<Animator>();
         animation.speed *= desiredSpeed;
-        attackLeft = attackNum - 1;
+        attackLeft = attackNum;
     }
 
     private void Update()
@@ -43,11 +45,14 @@ public class RandomSpawn : MonoBehaviour
     }
     IEnumerator Spawn()
     {
+        yield return new WaitForSeconds(5f);
+
         for (int i = 0; i < attackNum; i++)
         {
             attackLeft--;
             randomSpawn = Random.Range(0, 4);
             Instantiate(objects[randomSpawn], objects[randomSpawn].transform.position, objects[randomSpawn].transform.rotation);
+            Invoke("triggerSound", 3f);
             switch (randomSpawn)
             {
                 case 0:
@@ -67,4 +72,10 @@ public class RandomSpawn : MonoBehaviour
         }
         spawnEnd = true;
     }
+
+    private void triggerSound()
+    {
+        SoundManager.instance.PlayEffect(swingEffect);
+    }
+    
 }

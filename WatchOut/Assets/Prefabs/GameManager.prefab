@@ -50,6 +50,13 @@ MonoBehaviour:
   - {fileID: 522853188767107091, guid: ae2e4f439535a0649915c10c3a54f8cd, type: 3}
   - {fileID: 7514784042012452637, guid: 3aeb333b1a8c8d746a78477ba888e537, type: 3}
   attackNum: 8
+  attackLeft: 0
+  gameLose: 0
+  spawnEnd: 0
+  animation: {fileID: 0}
+  enemyModel: {fileID: 0}
+  desiredSpeed: 0
+  swingEffect: []
 --- !u!114 &5150441932137177497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,3 +69,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d581c98a8b6d4b4e97170c0446dd1e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHP: 10
+  healthBar: {fileID: 0}
+  attackLeft: 0
+  t_attackLeft: {fileID: 0}
+  combo: 0
+  pfComboPopup: {fileID: 0}
+  powerUp: 
+  strengthBar: {fileID: 0}
+  immuneBar: {fileID: 0}
+  strengthEffect: {fileID: 0}
+  immuneEffect: {fileID: 0}
+  loseGameUI: {fileID: 0}
+  winGameUI: {fileID: 0}
+  Spawning: {fileID: 0}
+  startGame: {fileID: 0}
+  winGame: {fileID: 0}
+  loseGame: {fileID: 0}
+  hitEffect: []
+  hurtEffect: []
+  strengthCombo: {fileID: 0}
+  immuneCombo: {fileID: 0}

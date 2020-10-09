@@ -10,6 +10,8 @@ public class ButtonBehaviour : MonoBehaviour
     public float timerDuration = 2f;
     public float lookTimer = 0f;
 
+    public AudioClip buttonIn;
+
     // Update is called once per frame
     void Update()
     {
@@ -34,6 +36,7 @@ public class ButtonBehaviour : MonoBehaviour
     public void SetGazeAt(bool gazedAt)
     {
         isLookedAt = gazedAt;
+        SoundManager.instance.PlayEffect(buttonIn);
     }
 
 }
