@@ -12,9 +12,9 @@ public class Tutorial : MonoBehaviour
     public float desiredSpeed;
     
     public AudioClip startGame;
-    public AudioClip[] swingEffect;
     public AudioClip[] hitEffect;
     public AudioClip[] hurtEffect;
+    public AudioClip evadeEffect;
     public AudioClip winGame;
 
     // Start is called before the first frame update
@@ -36,7 +36,6 @@ public class Tutorial : MonoBehaviour
             {
                 Instantiate(objects[i], objects[i].transform.position, objects[i].transform.rotation);
                 arrows[i].SetActive(true);
-                Invoke("triggerSound", 3f);
                 switch (i)
                 {
                     case 0:
@@ -58,6 +57,8 @@ public class Tutorial : MonoBehaviour
                     SoundManager.instance.PlayEffect(hitEffect);
                     Invoke("triggerHurtSound", 0.5f);
                 }
+                else
+                    Invoke("triggerEvadeSound", 0.5f);
             }
             arrows[i].SetActive(false);
             evade = false;
@@ -68,13 +69,14 @@ public class Tutorial : MonoBehaviour
         animation.SetTrigger("win");
     }
 
-    private void triggerSound()
-    {
-        SoundManager.instance.PlayEffect(swingEffect);
-    }
     private void triggerHurtSound()
     {
         SoundManager.instance.PlayEffect(hurtEffect);
+    }
+
+    private void triggerEvadeSound()
+    {
+        SoundManager.instance.PlayEffect(evadeEffect);
     }
 }
 

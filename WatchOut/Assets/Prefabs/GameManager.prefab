@@ -46,17 +46,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objects:
   - {fileID: 3703959853151497997, guid: b465645b340e1e44c9fa26039557420c, type: 3}
-  - {fileID: 6159571108262533303, guid: e70103476f7c81b4182ab344a9197d4e, type: 3}
-  - {fileID: 522853188767107091, guid: ae2e4f439535a0649915c10c3a54f8cd, type: 3}
   - {fileID: 7514784042012452637, guid: 3aeb333b1a8c8d746a78477ba888e537, type: 3}
+  - {fileID: 522853188767107091, guid: ae2e4f439535a0649915c10c3a54f8cd, type: 3}
+  - {fileID: 6159571108262533303, guid: e70103476f7c81b4182ab344a9197d4e, type: 3}
   attackNum: 8
   attackLeft: 0
   gameLose: 0
   spawnEnd: 0
   animation: {fileID: 0}
   enemyModel: {fileID: 0}
-  desiredSpeed: 0
-  swingEffect: []
+  desiredSpeed: 0.2
+  swingEffect:
+  - {fileID: 8300000, guid: 03b182d743b62ee4a8a1f7f1fd6a013a, type: 3}
+  - {fileID: 8300000, guid: ba3cafdb291447047a301f89eef7e886, type: 3}
+  - {fileID: 8300000, guid: 8d69616af0cca834a9df95aa1b65ac20, type: 3}
+  - {fileID: 8300000, guid: 8742d90456895af45b340d4bcd479a97, type: 3}
+  - {fileID: 8300000, guid: fd59e60182214d34ebc5129d35961a76, type: 3}
+  - {fileID: 8300000, guid: 712c5540625763e4697d218d0088c994, type: 3}
 --- !u!114 &5150441932137177497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,12 +75,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d581c98a8b6d4b4e97170c0446dd1e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 10
+  maxHP: 6
   healthBar: {fileID: 0}
   attackLeft: 0
   t_attackLeft: {fileID: 0}
   combo: 0
-  pfComboPopup: {fileID: 0}
+  pfComboPopup: {fileID: 5474873288663281138, guid: 43fda49f3db9f7c48ad3176d87593ad2,
+    type: 3}
   powerUp: 
   strengthBar: {fileID: 0}
   immuneBar: {fileID: 0}
@@ -82,11 +89,20 @@ MonoBehaviour:
   immuneEffect: {fileID: 0}
   loseGameUI: {fileID: 0}
   winGameUI: {fileID: 0}
-  Spawning: {fileID: 0}
-  startGame: {fileID: 0}
-  winGame: {fileID: 0}
-  loseGame: {fileID: 0}
-  hitEffect: []
-  hurtEffect: []
-  strengthCombo: {fileID: 0}
-  immuneCombo: {fileID: 0}
+  Spawning: {fileID: 5150441932137177499}
+  startGame: {fileID: 8300000, guid: 926a7561dca75504ab53d182da431979, type: 3}
+  winGame: {fileID: 8300000, guid: 015c45121cab9d3458618c08f06229a2, type: 3}
+  loseGame: {fileID: 8300000, guid: c4feb9c33564bea47a73c00b6637afe9, type: 3}
+  hitEffect:
+  - {fileID: 8300000, guid: dd587012f0ac92d44a832782165bceb0, type: 3}
+  - {fileID: 8300000, guid: 4fda6947a9ef00f4e8c4c2eba63c37d8, type: 3}
+  - {fileID: 8300000, guid: 2032f3b779316c749af236df04ca6e05, type: 3}
+  - {fileID: 8300000, guid: 83b9490b1b0c1be40bc003ac0a9e9c4c, type: 3}
+  - {fileID: 8300000, guid: f36bab76302849c48a60e953f00615fe, type: 3}
+  - {fileID: 8300000, guid: c9fed67a1bb7d4341bde79e933e43405, type: 3}
+  hurtEffect:
+  - {fileID: 8300000, guid: a178e193e301e7d46bbc3b74f9fce2e0, type: 3}
+  - {fileID: 8300000, guid: 6c6b129ab70fb5545a994baa2e84ec33, type: 3}
+  - {fileID: 8300000, guid: 6fa5fc6a4c732244c87679dea5c0f242, type: 3}
+  strengthCombo: {fileID: 8300000, guid: 4ab9be4e3fa914e47a08b55b37fa1694, type: 3}
+  immuneCombo: {fileID: 8300000, guid: 7e6b2f4db4f46b64b8ca4cae8323b7f3, type: 3}

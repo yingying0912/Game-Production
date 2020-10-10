@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     public AudioClip[] hurtEffect;
     public AudioClip strengthCombo;
     public AudioClip immuneCombo;
+    public AudioClip normalCombo;
 
     // Start is called before the first frame update
     void Start()
@@ -61,9 +62,9 @@ public class GameManager : MonoBehaviour
 
     public void playSound(bool evade)
     {
-        if (evade)
+        if (evade && attackLeft == 0)
             Invoke("triggerWinSound", 0.5f);
-        else
+        else if (!evade)
         {
             SoundManager.instance.PlayEffect(hitEffect);
             if (currentHP <= 0)
@@ -99,10 +100,16 @@ public class GameManager : MonoBehaviour
             powerUp = "";
             TriggerPowerUpEffect();
         }
-        if (combo > 5) 
+        if (combo > 5)
+        {
             ComboPopup.Create(pfComboPopup, new Vector3(15, 118, 20), combo, "right");
+            SoundManager.instance.PlayEffect(normalCombo);
+        }
         else if (combo >= 3)
+        {
             ComboPopup.Create(pfComboPopup, new Vector3(-15, 118, 20), combo, "left");
+            SoundManager.instance.PlayEffect(normalCombo);
+        }
     }
 
     public void CheckCombo()

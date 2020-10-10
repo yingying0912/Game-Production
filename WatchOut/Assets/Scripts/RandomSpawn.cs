@@ -17,8 +17,6 @@ public class RandomSpawn : MonoBehaviour
     public float desiredSpeed;
     private bool endAnimation = false;
 
-    public AudioClip[] swingEffect;
-
     void Start()
     {
         StartCoroutine(Spawn());
@@ -52,7 +50,6 @@ public class RandomSpawn : MonoBehaviour
             attackLeft--;
             randomSpawn = Random.Range(0, 4);
             Instantiate(objects[randomSpawn], objects[randomSpawn].transform.position, objects[randomSpawn].transform.rotation);
-            Invoke("triggerSound", 3f);
             switch (randomSpawn)
             {
                 case 0:
@@ -72,10 +69,4 @@ public class RandomSpawn : MonoBehaviour
         }
         spawnEnd = true;
     }
-
-    private void triggerSound()
-    {
-        SoundManager.instance.PlayEffect(swingEffect);
-    }
-    
 }

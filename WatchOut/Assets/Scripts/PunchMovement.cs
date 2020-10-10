@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PunchMovement : MonoBehaviour
 {
-
+    public RandomSpawn spawning;
     public Rigidbody rg;
     public GameObject camera;
     public Vector3 velocity;
@@ -15,7 +15,7 @@ public class PunchMovement : MonoBehaviour
     {        
         velocity = camera.transform.position - transform.position;
         velocity.Normalize();
-        velocity *= speed;
+        velocity *= speed * spawning.desiredSpeed;
     }
 
     void Update()

@@ -107,10 +107,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd9ce1f9e9114014ca3d96e3d6b8176d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawning: {fileID: 5150441932137177499, guid: f2d0c3197de1c5345bd8a0359dd934eb,
+    type: 3}
   rg: {fileID: 6159571108262533301}
   camera: {fileID: 2978042541601059575, guid: d810d56d75aa5c34d9ade145338fde90, type: 3}
   velocity: {x: 0, y: 0, z: 0}
-  speed: 5
+  speed: 25
 --- !u!54 &6159571108262533301
 Rigidbody:
   m_ObjectHideFlags: 0
