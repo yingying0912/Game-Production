@@ -506,6 +506,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5623363075044839657, guid: 3a7846fdba555f24a9d19c097458e188,
+        type: 3}
+      propertyPath: bgm
+      value: 
+      objectReference: {fileID: 8300000, guid: b702f3ec5c1d2054eb125c3f635ccd30, type: 3}
     - target: {fileID: 5623363075044839658, guid: 3a7846fdba555f24a9d19c097458e188,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -568,16 +573,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a7846fdba555f24a9d19c097458e188, type: 3}
---- !u!114 &771372059 stripped
+--- !u!114 &771372060 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5623363075044839657, guid: 3a7846fdba555f24a9d19c097458e188,
+  m_CorrespondingSourceObject: {fileID: 1543167251058378708, guid: 3a7846fdba555f24a9d19c097458e188,
     type: 3}
   m_PrefabInstance: {fileID: 771372058}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 455096320e906264e9f5451f184dd0b4, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c88fd1d794db13479cad5f12f544737, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1013130388
@@ -913,25 +918,35 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2047390158}
+      - m_Target: {fileID: 771372060}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: btn_select
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 771372060}
+        m_MethodName: Stop
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: bgm
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2047390159}
         m_MethodName: LoadGameLevel
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 771372059}
-        m_MethodName: PlayEffect
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 8d5af981d80258b48a47ef9610f21bbc,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -999,6 +1014,17 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 771372060}
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: btn_in
             m_BoolArgument: 1
           m_CallState: 2
   - eventID: 1
@@ -1426,8 +1452,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2047390158}
-        m_MethodName: LoadPrevScene
+      - m_Target: {fileID: 2047390159}
+        m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1437,16 +1463,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 771372059}
-        m_MethodName: PlayEffect
-        m_Mode: 2
+      - m_Target: {fileID: 771372060}
+        m_MethodName: Play
+        m_Mode: 5
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 8d5af981d80258b48a47ef9610f21bbc,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: btn_select
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1757539125
@@ -1512,6 +1537,17 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 771372060}
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: btn_in
             m_BoolArgument: 1
           m_CallState: 2
   - eventID: 1
@@ -1632,6 +1668,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
+--- !u!114 &2047390159 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6145105203457436140, guid: 511386172dd77764ca1b7bb8646dff61,
+    type: 3}
+  m_PrefabInstance: {fileID: 2047390156}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047390157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e10341a7f2753e4b8a3ff0392bf9d8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2110715959
 GameObject:
   m_ObjectHideFlags: 0
@@ -1727,16 +1775,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 771372059}
-        m_MethodName: PlayEffect
-        m_Mode: 2
+      - m_Target: {fileID: 771372060}
+        m_MethodName: Play
+        m_Mode: 5
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 8d5af981d80258b48a47ef9610f21bbc,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: btn_select
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2110715962
@@ -1802,6 +1849,17 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 771372060}
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: btn_in
             m_BoolArgument: 1
           m_CallState: 2
   - eventID: 1

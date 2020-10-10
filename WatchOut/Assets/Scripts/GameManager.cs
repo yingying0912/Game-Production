@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public int maxHP = 10;
-    private int currentHP;
+    public int currentHP;
     public HealthBar healthBar;
 
     public int attackLeft;
@@ -25,19 +25,10 @@ public class GameManager : MonoBehaviour
     public GameObject winGameUI;
     public RandomSpawn Spawning;
 
-    public AudioClip startGame;
-    public AudioClip winGame;
-    public AudioClip loseGame;
-    public AudioClip[] hitEffect;
-    public AudioClip[] hurtEffect;
-    public AudioClip strengthCombo;
-    public AudioClip immuneCombo;
-    public AudioClip normalCombo;
-
     // Start is called before the first frame update
     void Start()
     {
-        SoundManager.instance.PlayEffect(startGame);
+        FindObjectOfType<AudioManager>().Play("start");
         currentHP = maxHP;
         healthBar.SetMaxHealth(maxHP);
     }
@@ -55,7 +46,6 @@ public class GameManager : MonoBehaviour
 
         if (Spawning.spawnEnd)
         {
-            
             winGameUI.SetActive(true);
         }
     }
@@ -66,7 +56,7 @@ public class GameManager : MonoBehaviour
             Invoke("triggerWinSound", 0.5f);
         else if (!evade)
         {
-            SoundManager.instance.PlayEffect(hitEffect);
+            FindObjectOfType<AudioManager>().PlayRandom("hit_effect");
             if (currentHP <= 0)
                 Invoke("triggerLoseSound", 0.5f);
             else
@@ -103,12 +93,12 @@ public class GameManager : MonoBehaviour
         if (combo > 5)
         {
             ComboPopup.Create(pfComboPopup, new Vector3(15, 118, 20), combo, "right");
-            SoundManager.instance.PlayEffect(normalCombo);
+            FindObjectOfType<AudioManager>().Play("combo");
         }
         else if (combo >= 3)
         {
             ComboPopup.Create(pfComboPopup, new Vector3(-15, 118, 20), combo, "left");
-            SoundManager.instance.PlayEffect(normalCombo);
+            FindObjectOfType<AudioManager>().Play("combo");
         }
     }
 
@@ -145,13 +135,12 @@ public class GameManager : MonoBehaviour
         }
         else if (powerUp == "stronger")
         {
-            SoundManager.instance.PlayMusic(strengthCombo);
+            FindObjectOfType<AudioManager>().Play("strength");
             strengthEffect.SetActive(true);
         } 
         else if (powerUp == "immune")
         {
-            SoundManager.instance.PlayMusic(immuneCombo);
-            SoundManager.instance.musicSource.loop = true;
+            FindObjectOfType<AudioManager>().Play("immune");
             strengthEffect.SetActive(false);
             immuneEffect.SetActive(true);
         }        
@@ -159,16 +148,16 @@ public class GameManager : MonoBehaviour
 
     private void triggerHurtSound()
     {
-        SoundManager.instance.PlayEffect(hurtEffect);
+        FindObjectOfType<AudioManager>().PlayRandom("hurt_effect");
     }
 
     private void triggerLoseSound()
     {
-        SoundManager.instance.PlayEffect(loseGame);
+        FindObjectOfType<AudioManager>().Play("lose");
     }
 
     private void triggerWinSound()
     {
-        SoundManager.instance.PlayEffect(winGame);
+        FindObjectOfType<AudioManager>().Play("win");
     }
 }

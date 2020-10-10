@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class Tutorial : MonoBehaviour
 {
-    //public GameObject[] objects;
     public TutorialCollision collisionChecker;
 
     public bool evade = false;
@@ -13,14 +13,10 @@ public class Tutorial : MonoBehaviour
     public Animator animation;
     public float desiredSpeed;
     private int i;
+    private bool isIn = true;
     public GameObject rightFoot;
-    public GameObject hip;
-
-    public AudioClip startGame;
-    public AudioClip[] hitEffect;
-    public AudioClip[] hurtEffect;
-    public AudioClip evadeEffect;
-    public AudioClip winGame;
+    public GameObject rightHand;
+    public GameObject leftHand;
 
     // Start is called before the first frame update
     void Start()
@@ -32,14 +28,14 @@ public class Tutorial : MonoBehaviour
 
     IEnumerator tutStart()
     {
-        SoundManager.instance.PlayEffect(startGame);
+        FindObjectOfType<AudioManager>().Play("start");
         yield return new WaitForSeconds(5f);
 
         for(i = 0; i < 4; i++)
         {
             while (!evade)
             {
-                //Instantiate(objects[i], objects[i].transform.position, objects[i].transform.rotation);
+                isIn = false;
                 arrows[i].SetActive(true);
                 switch (i)
                 {
@@ -59,7 +55,7 @@ public class Tutorial : MonoBehaviour
                 yield return new WaitForSeconds(5f);
                 if (!evade)
                 {
-                    SoundManager.instance.PlayEffect(hitEffect);
+                    FindObjectOfType<AudioManager>().PlayRandom("hit_effect");
                     Invoke("triggerHurtSound", 0.5f);
                 }
                 else
@@ -69,7 +65,7 @@ public class Tutorial : MonoBehaviour
             evade = false;
         }
         yield return new WaitForSeconds(1f);
-        SoundManager.instance.PlayEffect(winGame);
+        FindObjectOfType<AudioManager>().Play("win");
         tutorialEnd.SetActive(true);
         animation.SetTrigger("win");
     }
@@ -79,32 +75,47 @@ public class Tutorial : MonoBehaviour
         switch (i)
         {
             case 0:
-                if (rightFoot.transform.position.z >= 1.17)
+                if (rightFoot.transform.position.z <= 7.1 && !isIn)
+                {
                     collisionChecker.checkCollision(this, i);
+                    isIn = true;
+                }     
                 break;
             case 1:
-                if (rightFoot.transform.position.z >= 1.12)
+                if (rightHand.transform.position.z <= 15 && !isIn)
+                {
                     collisionChecker.checkCollision(this, i);
+                    isIn = true;
+                }
+                    
                 break;
             case 2:
-                if (hip.transform.position.z >= 0.078)
+                if (rightHand.transform.position.z <= 4.4 && !isIn)
+                {
                     collisionChecker.checkCollision(this, i);
+                    isIn = true;
+                }
+                    
                 break;
             case 3:
-                if (hip.transform.position.x >= 0.0129)
+                if (leftHand.transform.position.x <= -19 && !isIn)
+                {
                     collisionChecker.checkCollision(this, i);
+                    isIn = true;
+                }
+                    
                 break;
         }
     }
 
     private void triggerHurtSound()
     {
-        SoundManager.instance.PlayEffect(hurtEffect);
+        FindObjectOfType<AudioManager>().PlayRandom("hurt_effect");
     }
 
     private void triggerEvadeSound()
     {
-        SoundManager.instance.PlayEffect(evadeEffect);
+        FindObjectOfType<AudioManager>().Play("combo");
     }
 }
 

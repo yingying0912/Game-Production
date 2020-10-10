@@ -217,16 +217,26 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1763125007}
-        m_MethodName: PlayEffect
-        m_Mode: 2
+      - m_Target: {fileID: 1763125008}
+        m_MethodName: Play
+        m_Mode: 5
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 8d5af981d80258b48a47ef9610f21bbc,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: btn_select
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1763125008}
+        m_MethodName: Stop
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: bgm
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &65030565
@@ -292,6 +302,17 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1763125008}
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: btn_in
             m_BoolArgument: 1
           m_CallState: 2
   - eventID: 1
@@ -1208,6 +1229,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5623363075044839657, guid: 3a7846fdba555f24a9d19c097458e188,
+        type: 3}
+      propertyPath: bgm
+      value: 
+      objectReference: {fileID: 8300000, guid: b702f3ec5c1d2054eb125c3f635ccd30, type: 3}
     - target: {fileID: 5623363075044839658, guid: 3a7846fdba555f24a9d19c097458e188,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1270,16 +1296,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a7846fdba555f24a9d19c097458e188, type: 3}
---- !u!114 &1763125007 stripped
+--- !u!114 &1763125008 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5623363075044839657, guid: 3a7846fdba555f24a9d19c097458e188,
+  m_CorrespondingSourceObject: {fileID: 1543167251058378708, guid: 3a7846fdba555f24a9d19c097458e188,
     type: 3}
   m_PrefabInstance: {fileID: 1763125006}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 455096320e906264e9f5451f184dd0b4, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c88fd1d794db13479cad5f12f544737, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1803404864
@@ -1377,13 +1403,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1763125007}
-        m_MethodName: PlayEffect
-        m_Mode: 2
+      - m_Target: {fileID: 1763125008}
+        m_MethodName: PlayButtonSelect
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 8d5af981d80258b48a47ef9610f21bbc,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1446,6 +1471,17 @@ MonoBehaviour:
         - m_Target: {fileID: 1803404870}
           m_MethodName: SetGazeAt
           m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1763125008}
+          m_MethodName: PlayButtonIn
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
