@@ -190,6 +190,8 @@
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\ButtonBehaviour.cs" />
     <Compile Include="Assets\Scripts\ComboPopup.cs" />
+    <Compile Include="Assets\Scripts\E_GameManager.cs" />
+    <Compile Include="Assets\Scripts\E_RandomSpawn.cs" />
     <Compile Include="Assets\Scripts\EnemySound.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GyroRotate.cs" />

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public void checkCollision(int position)
+    public void checkCollision(int position, bool endless)
     {
         bool actionEvade = false;
 
@@ -28,16 +28,33 @@ public class Player : MonoBehaviour
                 break;
         }
 
-        if (actionEvade)
+        if (endless)
         {
-            FindObjectOfType<GameManager>().SetCombo(1);
+            if (actionEvade)
+            {
+                FindObjectOfType<E_GameManager>().SetCombo(1);
+            }
+            else
+            {
+                FindObjectOfType<E_GameManager>().minusHP();
+                FindObjectOfType<E_GameManager>().SetCombo(0);
+            }
+
+            FindObjectOfType<E_GameManager>().playSound(actionEvade);
         }
         else
         {
-            FindObjectOfType<GameManager>().minusHP();
-            FindObjectOfType<GameManager>().SetCombo(0);
-        }
+            if (actionEvade)
+            {
+                FindObjectOfType<GameManager>().SetCombo(1);
+            }
+            else
+            {
+                FindObjectOfType<GameManager>().minusHP();
+                FindObjectOfType<GameManager>().SetCombo(0);
+            }
 
-        FindObjectOfType<GameManager>().playSound(actionEvade);
+            FindObjectOfType<GameManager>().playSound(actionEvade);
+        }
     }
 }

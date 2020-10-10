@@ -29,7 +29,7 @@ public class SceneController : MonoBehaviour
 
     public void LoadGameLevel(int level)
     {
-        SceneManager.LoadScene(level + 3);
+        SceneManager.LoadScene(level + 4);
     }
 
     public void LoadTutorial()
@@ -37,9 +37,14 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public void LoadLevelModeMenu()
+    public void LoadEndlessMode()
     {
         SceneManager.LoadScene(2);
+    }
+
+    public void LoadLevelModeMenu()
+    {
+        SceneManager.LoadScene(3);
     }
 
     public void Exit()

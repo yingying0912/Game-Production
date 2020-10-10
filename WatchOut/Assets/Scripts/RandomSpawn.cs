@@ -83,28 +83,28 @@ public class RandomSpawn : MonoBehaviour
             case 0:
                 if (rightFoot.transform.position.z <= 7.1 && !isIn)
                 {
-                    collisionChecker.checkCollision(randomSpawn);
+                    collisionChecker.checkCollision(randomSpawn, false);
                     isIn = true;
                 }
                 break;
             case 1:
                 if (rightHand.transform.position.z <= 15 && !isIn)
                 {
-                    collisionChecker.checkCollision(randomSpawn);
+                    collisionChecker.checkCollision(randomSpawn, false);
                     isIn = true;
                 }
                 break;
             case 2:
                 if (rightHand.transform.position.z <= 4.4 && !isIn)
                 {
-                    collisionChecker.checkCollision(randomSpawn);
+                    collisionChecker.checkCollision(randomSpawn, false);
                     isIn = true;
                 }
                 break;
             case 3:
                 if (leftHand.transform.position.x <= -19 && !isIn)
                 {
-                    collisionChecker.checkCollision(randomSpawn);
+                    collisionChecker.checkCollision(randomSpawn, false);
                     isIn = true;
                 }
                 break;

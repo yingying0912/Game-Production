@@ -112,9 +112,4 @@ public class AudioManager : MonoBehaviour
 			s.source.Play();
 		}
 	}
-
-	public void PlayBGM()
-	{
-		Play("bgm");
-	}
 }

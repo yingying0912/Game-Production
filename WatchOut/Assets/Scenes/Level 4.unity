@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: eeabf9e30671b1a49b436266a4016809,
+  m_LightingDataAsset: {fileID: 112000000, guid: d160f316aa80e9645aeb10fa44350027,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -1172,6 +1172,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8926184887909377759, guid: 48a724cd025f5ae42998737eea172747,
+        type: 3}
+      propertyPath: m_Text
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48a724cd025f5ae42998737eea172747, type: 3}
 --- !u!114 &2399972831287923894 stripped
@@ -1598,6 +1603,11 @@ PrefabInstance:
       propertyPath: maxHP
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5150441932137177497, guid: f2d0c3197de1c5345bd8a0359dd934eb,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5150441932137177498, guid: f2d0c3197de1c5345bd8a0359dd934eb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1676,7 +1686,7 @@ PrefabInstance:
     - target: {fileID: 5150441932137177499, guid: f2d0c3197de1c5345bd8a0359dd934eb,
         type: 3}
       propertyPath: desiredSpeed
-      value: 0
+      value: 0.28
       objectReference: {fileID: 0}
     - target: {fileID: 5150441932137177499, guid: f2d0c3197de1c5345bd8a0359dd934eb,
         type: 3}
@@ -1733,6 +1743,11 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 558381174}
+    - target: {fileID: 5150441932137177499, guid: f2d0c3197de1c5345bd8a0359dd934eb,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5150441932137177500, guid: f2d0c3197de1c5345bd8a0359dd934eb,
         type: 3}
       propertyPath: m_Name
