@@ -3,14 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Tutorial : MonoBehaviour
 {
-    public GameObject[] objects;
+    //public GameObject[] objects;
+    public TutorialCollision collisionChecker;
+
     public bool evade = false;
     public GameObject[] arrows;
     public GameObject tutorialEnd;
     public GameObject enemyModel;
     public Animator animation;
     public float desiredSpeed;
-    
+    private int i;
+    public GameObject rightFoot;
+    public GameObject hip;
+
     public AudioClip startGame;
     public AudioClip[] hitEffect;
     public AudioClip[] hurtEffect;
@@ -30,11 +35,11 @@ public class Tutorial : MonoBehaviour
         SoundManager.instance.PlayEffect(startGame);
         yield return new WaitForSeconds(5f);
 
-        for(int i = 0; i < 4; i++)
+        for(i = 0; i < 4; i++)
         {
             while (!evade)
             {
-                Instantiate(objects[i], objects[i].transform.position, objects[i].transform.rotation);
+                //Instantiate(objects[i], objects[i].transform.position, objects[i].transform.rotation);
                 arrows[i].SetActive(true);
                 switch (i)
                 {
@@ -67,6 +72,29 @@ public class Tutorial : MonoBehaviour
         SoundManager.instance.PlayEffect(winGame);
         tutorialEnd.SetActive(true);
         animation.SetTrigger("win");
+    }
+
+    private void Update()
+    {
+        switch (i)
+        {
+            case 0:
+                if (rightFoot.transform.position.z >= 1.17)
+                    collisionChecker.checkCollision(this, i);
+                break;
+            case 1:
+                if (rightFoot.transform.position.z >= 1.12)
+                    collisionChecker.checkCollision(this, i);
+                break;
+            case 2:
+                if (hip.transform.position.z >= 0.078)
+                    collisionChecker.checkCollision(this, i);
+                break;
+            case 3:
+                if (hip.transform.position.x >= 0.0129)
+                    collisionChecker.checkCollision(this, i);
+                break;
+        }
     }
 
     private void triggerHurtSound()

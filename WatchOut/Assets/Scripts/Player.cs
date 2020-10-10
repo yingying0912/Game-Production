@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    /*
     void OnTriggerEnter(Collider collision)
     {
         bool actionEvade = false;
@@ -38,4 +39,5 @@ public class Player : MonoBehaviour
         }
         FindObjectOfType<GameManager>().playSound(actionEvade);
     }
+    */
 }

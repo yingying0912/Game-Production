@@ -6,7 +6,7 @@ using UnityEngine;
 public class RandomSpawn : MonoBehaviour
 {
 
-    public GameObject[] objects;
+    //public GameObject[] objects;
     private int randomSpawn = 0;
     public int attackNum;
     public int attackLeft;
@@ -48,8 +48,8 @@ public class RandomSpawn : MonoBehaviour
         for (int i = 0; i < attackNum; i++)
         {
             attackLeft--;
-            randomSpawn = Random.Range(0, 4);
-            Instantiate(objects[randomSpawn], objects[randomSpawn].transform.position, objects[randomSpawn].transform.rotation);
+            //randomSpawn = Random.Range(0, 4);
+            //Instantiate(objects[randomSpawn], objects[randomSpawn].transform.position, objects[randomSpawn].transform.rotation);
             switch (randomSpawn)
             {
                 case 0:
