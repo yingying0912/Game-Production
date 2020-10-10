@@ -1370,6 +1370,8 @@ MonoBehaviour:
   rightFoot: {fileID: 1257199517}
   rightHand: {fileID: 1033516607}
   leftHand: {fileID: 1413220833}
+  animator: {fileID: 2064084637}
+  animationLength: 0
 --- !u!1001 &5273644187498678078
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1492,6 +1494,11 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 5623363075044577222}
+    - target: {fileID: 5273644189239241738, guid: c162ba3c4a9ee0f419a590d55f1c9485,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5273644189239241738, guid: c162ba3c4a9ee0f419a590d55f1c9485,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

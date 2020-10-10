@@ -17,6 +17,8 @@ public class Tutorial : MonoBehaviour
     public GameObject rightFoot;
     public GameObject rightHand;
     public GameObject leftHand;
+    public Animator animator;
+    public float animationLength;
 
     // Start is called before the first frame update
     void Start()
@@ -52,7 +54,12 @@ public class Tutorial : MonoBehaviour
                         animation.SetTrigger("right");
                         break;
                 }
-                yield return new WaitForSeconds(5f);
+                animationLength = animator.GetCurrentAnimatorClipInfo(0).Length +
+                    animator.GetNextAnimatorClipInfo(0).Length;
+                if (i != 3)
+                    yield return new WaitForSeconds(animationLength / desiredSpeed);
+                else
+                    yield return new WaitForSeconds(5f);
                 if (!evade)
                 {
                     FindObjectOfType<AudioManager>().PlayRandom("hit_effect");

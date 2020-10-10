@@ -929,17 +929,6 @@ MonoBehaviour:
           m_StringArgument: btn_select
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 771372060}
-        m_MethodName: Stop
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: bgm
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 2047390159}
         m_MethodName: LoadGameLevel
         m_Mode: 3
@@ -1056,7 +1045,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerDuration: 2
   lookTimer: 0
-  buttonIn: {fileID: 8300000, guid: 1003319ee598c9e4aab930aaa25e8be2, type: 3}
 --- !u!1001 &1317816442
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1579,7 +1567,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerDuration: 2
   lookTimer: 0
-  buttonIn: {fileID: 8300000, guid: 1003319ee598c9e4aab930aaa25e8be2, type: 3}
 --- !u!1001 &2047390156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1891,4 +1878,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerDuration: 2
   lookTimer: 0
-  buttonIn: {fileID: 8300000, guid: 1003319ee598c9e4aab930aaa25e8be2, type: 3}
